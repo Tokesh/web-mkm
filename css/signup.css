@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    padding: 0 10vw;
+    color: white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-content {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    margin-top: 15vh;
+    flex-direction: row;
+    gap: 5vw;
+    pointer-events: fill;
+
+    /* display: none; */
+}
+
+.popup-register.show, .popup-login.show {
+    display: block;
+    pointer-events: fill;
+    /* opacity: 1; */
+}
+
+.main-content.show {
+    pointer-events: none;
+}
+
+/* .popup-register.close {
+    display: none;
+    pointer-events: none;
+}
+
+.main-content.close {
+    pointer-events: fill;
+} */
+
+.left-side-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    /* border: 1px solid red; */
+}
+
+.right-side-signup {
+    width: 40%;
+    /* border: 1px solid greenyellow; */
+}
+
+.right-side-top-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    /* flex-direction: row; */
+    font-size: 2em;
+    height: 35vh;
+    /* height: 100%; */
+    width: 30vw;
+}
+
+.signup-btn {
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vw;
+    background-color: white;
+    /* width: 60%; */
+    height: 6vh;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.signup-btns {
+    margin-bottom: 4vh;
+}
+
+hr {
+    width: 20vw;
+    opacity: 50%;
+}
+
+.hr-text {
+    display: flex;
+    justify-content: center;
+    width: 20vw;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+footer{
+    pointer-events: fill;
+
+    /* margin-bottom: 42px; */
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2px;
+}
+ 
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
+    list-style: none;
+    gap: 10px;
+    margin: 20px 0;
+}
+ 
+li, a{
+    text-decoration: none;
+    color: #8a8a8a;
+}
+
+.line-or {
+    display: flex;
+    height: 1px;
+    align-items: center;
+    gap: 5px;
+}
+
+.popup-register, .popup-login {
+    display: none;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* opacity: 0; */
+    pointer-events: none;
+}
+
+.popup-register-box, .popup-login-box {
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(181, 181, 181, 0.1);
+}
+
+.popup-register-form {
+    position: relative;
+    width: 40%;
+    display: flex;
+
+    /* justify-content: space-evenly; */
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 15px;
+    height: 80vh;
+    padding: 50px 80px 0 80px;
+    /* border: 1px solid red; */
+}
+
+.popup-login-form {
+    width: 25vw;
+    height: 90vh;
+    position: relative;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    /* align-content: center; */
+    /* align-items: center; */
+    justify-content: space-evenly;
+    background: black;
+}
+
+/* .popup-login-btns {
+    border: 1px solid red;    
+} */
+
+.popup-register-form-1 {
+    width: 30vw;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+}
+
+
+.input-form {
+    border: 1px solid grey;
+    height: 60px;
+    background-color: black;
+    color: grey;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.popup-register-form-2 p {
+    font-size: 14px;
+    color: grey;
+}
+
+option {
+    color: grey;
+}
+
+.popup-register-form-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid green; */
+    height: 40%;
+    width: 30vw;
+    margin-top: -50px;
+}
+
+.popup-register-form-a {
+    display: flex;
+    justify-content: right;
+    font-size: 14px;
+    margin-bottom: 5vh;
+}

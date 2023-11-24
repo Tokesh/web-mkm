@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home / X</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <section>
+        <!-- Это левая панелька -->
+        <div class="main-left-bar">
+            <div class="main-left-bar-1">
+                <ul>
+                    <li><a href="home.html"><img src="images/x-logo.png" alt="x-logo" width="30px"></a></li>
+                    <li><a href="home.html"><img src="images/home.png" alt="home" width="30px">Home</a></li>
+                    <li><a href="explore.html"><img src="images/find.png" alt="explore" width="30px">Explore</a></li>
+                    <li><a href="notifications.html"><img src="images/notifications.png" alt="notifications" width="30px">Notifications</a></li>
+                    <li><a href="messages.html"><img src="images/messages.png" alt="messages" width="30px">Messages</a></li>
+                    <li><a href="lists.html"><img src="images/lists.png" alt="lists" width="30px">Lists</a></li>
+                    <li><a href="communities.html"><img src="images/communities.png" alt="communities" width="30px">Communities</a></li>
+                    <li><a href="#"><img src="images/x.png" alt="premium" width="30px">Premium</a></li>
+                    <li><a href="profile.html"><img src="images/profile.png" alt="profile" width="30px">Profile</a></li>
+                    <li><a href="#"><img src="images/more.png" alt="more" width="30px">More</a></li>
+                </ul>
+                <button style="background: dodgerblue;height: 50px;width: 100%;border: none;font-size: 20px;color: white;font-weight: bold;border-radius: 30px;">Post</button>
+            </div>
+            <div class="main-left-bar-2">
+                <img src="images/avatar.jpg" alt="avatar" width="50px" style="border-radius: 50px;">
+                <div class="main-left-bar-2-text">
+                    <h4 style="color: white">Kan</h4>
+                    <h4 style="color: grey">@Kanres</h4>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-middle-content">
+            <div class="profile-container">
+                <a href="home.html"><img src="./images/arrow-left.png" alt="x-logo" width="30px"></a>
+                <div class="profile-info">
+                    <h1 style="color: white">Kan</h1>
+                    <h4 style="color: rgb(100, 100, 102)">0 posts</h4>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="background"></div>
+                <div class="user-info">
+                    <img src="images/avatar.jpg" alt="avatar" width="150px" style="border-radius: 50%;">
+                    <h2>Kan</h2>
+                    <h4 style="color: grey">@Kanres</h4>
+                    <h4 style="color: grey">Joined November 2022</h4>
+                    <div style="display:flex; gap:5px">
+                        <h4 style="color: white;">5</h4><h4 style="color: grey; margin-bottom: 10px; margin-right: 10px;">Following</h4>
+                        <h4 style="color: white;">0</h4><h4 style="color: grey; margin-bottom: 10px;">Followers</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="navigation">
+                        <button class="nav-button active" onclick="changeTab('posts')">Posts</button>
+                        <button class="nav-button" onclick="changeTab('replies')">Replies</button>
+                        <button class="nav-button" onclick="changeTab('highlights')">Highlights</button>
+                        <button class="nav-button" onclick="changeTab('media')">Media</button>
+                        <button class="nav-button" onclick="changeTab('likes')">Likes</button>
+                    </div>
+                </div>
+                <h1 style="color:white; padding:20px"> Who to follow</h1>
+                <div class="who-to-follow">
+                    <div class="follow-profile">
+                        <img src="images/avatar.jpg" alt="user1" class="follow-avatar">
+                        <div class="follow-info">
+                            <h2 style="margin-bottom: 5px">gooseworx gooseworx gooseworx</h2>
+                            <h3 style="margin-bottom: 5px">@GooseworxMusic</h3>
+                            <h4 style="color:#e6e3e3">gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx gooseworx</h4>
+                        </div>
+                        <button class="follow-button">Follow</button>
+                    </div>
+
+                    <div class="follow-profile">
+                        <img src="images/avatar.jpg" alt="user2" class="follow-avatar">
+                        <div class="follow-info">
+                            <h2 style="margin-bottom: 5px">CREEPYKIP</h2>
+                            <h3 style="margin-bottom: 5px">@peachykip</h3>
+                            <h4 style="color:#e6e3e3">COMMS 4/5 24 artist, cosplayer, and writer Cofc 22, ask to reupload</h4>
+                        </div>
+                        <button class="follow-button">Follow</button>
+                    </div>
+
+                    <!-- Добавьте другие профили по аналогии -->
+                </div>
+            </div>
+        </div>
+        <div class="main-right-bar">
+            <div class="main-right-bar-search">
+                <img src="images/find.png" alt="search" width="24px" height="24px">
+                <input type="text" placeholder="Search" style="border: none; background: rgb(47, 47, 47);height: 40px;font-size: 16px;border-radius: 50px;width: 100%;color: white;">
+            </div>
+            <div class="main-right-bar-premium">
+                <h2 style="color: white;">Subscribe to Premium</h2>
+                <h4 style="color: white;">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</h4>
+                <a href="premium.html" style="width: 7vw;"><button style="background: dodgerblue;height: 30px;width: 7vw;border: none;font-size: 16px;color: white;font-weight: bold;border-radius: 30px;cursor: pointer;;">Subscribe</button></a>
+            </div>
+
+            <div class="trending">
+                <h1 style="color: white;padding: 1vw 0 0 1vw;">Trends for you</h1>
+                <div class="trends-box">
+                    <div class="trends-item">
+                        <p style="color: gray;font-size: 14px;">News • Trending</p>
+                        <h4 style="color: white;">Hamas</h4>
+                        <p style="color: grey;font-size: 14px;">2.72M posts</p>
+                    </div>
+
+                    <div class="trends-item">
+                        <p style="color: gray;font-size: 14px;">Only on Twitter • Trending</p>
+                        <h4 style="color: white;">#TheAmazingDigitalCircus</h4>
+                        <p style="color: grey;font-size: 14px;">119K posts</p>
+                    </div>
+
+                    <div class="trends-item">
+                        <p style="color: gray;font-size: 14px;">News • Trending</p>
+                        <h4 style="color: white;">Israel</h4>
+                        <p style="color: grey;font-size: 14px;">6.96M posts</p>
+                    </div>
+
+                    <div class="trends-item">
+                        <p style="color: gray;font-size: 14px;">Trending in Kazakhstan</p>
+                        <h4 style="color: white;">Ризли</h4>
+                    </div>
+
+                    <div class="trends-item">
+                        <p style="color: gray;font-size: 14px;">Trending in Kazakhstan</p>
+                        <h4 style="color: white;">China</h4>
+                        <p style="color: grey;font-size: 14px;">358K posts</p>
+                    </div>
+
+                    <div class="trends-item">
+                        <a href="#" style="color: dodgerblue;font-size: 16px;font-weight: bold;">Show more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
