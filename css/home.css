@@ -24,10 +24,10 @@ section {
 .main-left-bar {
     left: 7vw;
     /* position: fixed; */
-    width: 16vw;
+    width: 22vw;
     /* border: 1px solid red; */
     border-right: 1px solid rgb(58, 58, 58);
-    height: 100vh;
+    /* height: 100vh; */
     font-size: 18px;
     padding: 0 2vh;
     /* align-content: space-between; */
@@ -54,7 +54,7 @@ section {
 }
 
 .main-left-bar-2 {
-    position: absolute;
+    position: fixed;
     /* height: 50%; */
     bottom: 5vh;
     /* right: 0; */

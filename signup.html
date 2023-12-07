@@ -74,15 +74,18 @@
                 <a href="#" onclick="closePopup()" id="closeRegBtn" style="position: absolute;top: 25px;left: 50px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: white;font-weight: 100;"><h1>X</h1></a>
                 <div class="popup-register-form-1">
                     <h2>Создайте учетную запись</h2>
-                    <input type="text" name="name" placeholder="Имя" class="input-form">
-                    <input type="text" name="phone" placeholder="Email" class="input-form">
-                    
-                    <input type="password"  name="phone" placeholder="Пароль" class="input-form">
-                    <input type="confirm_password"  name="phone" placeholder="Подтвердите пароль" class="input-form">
+                    <form action="signup.php" method="post">
+                        <input type="text" name="name" placeholder="Имя" class="input-form" required style="width: 400px;">
+                        <input type="text" name="email" placeholder="Email" class="input-form" required style="width: 400px;">
+                        <input type="password" name="password" placeholder="Пароль" class="input-form" required style="width: 400px;">
+                        <input type="password" name="confirm_password" placeholder="Подтвердите пароль" class="input-form" required style="width: 400px;">
+                        <input type="text" name="firstname" placeholder="Фамилия" class="input-form" required style="width: 400px;">
+                        <input type="text" name="lastname" placeholder="Имя" class="input-form" required style="width: 400px;">
+                        
                     
                 </div>
 
-                <div class="popup-register-form-2">
+                <div class="popup-register-form-2"  style="margin-top: 100px;">
                 <h2>Дата рождения</h2>
 
                     <p>Эта информация не будет общедоступной. Подтвердите свой возраст, даже если эта учетная запись предназначена для компании, домашнего животного и т.д.</p>
@@ -181,7 +184,8 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" style="border-radius: 25px; background: white;width: 25vw;height: 50px;cursor: pointer;font-size: 18px;">Регистрация</button>
+                <button type="submit" style="border-radius: 25px; background: white;width: 25vw;height: 50px;cursor: pointer;font-size: 18px;margin-bottom:50px">Регистрация</button>
+            </form>
             </div>
         </div>
     </div>
@@ -209,8 +213,11 @@
                     <p style="color: grey;">ИЛИ</p>
                     <hr style="width: 10vw;">
                 </div>
-                <input type="text" placeholder="Номер телефона, адрес электронной почты" class="input-form">
-                <a href="home.html"><button type="submit" style="border-radius: 25px; background: white;width: 25vw;height: 50px;cursor: pointer;font-size: 18px;">Далее</button></a>
+                <form action="login.php" method="post">
+                    <input type="text" name="loginEmail" placeholder="Номер телефона, адрес электронной почты" class="input-form" required style="width: 400px;">
+                    <input type="password" name="loginPassword" placeholder="Пароль" class="input-form" required style="width: 400px; margin-bottom: 50px;">
+                    <button type="submit" style="border-radius: 25px; background: white;width: 25vw;height: 50px;cursor: pointer;font-size: 18px;">Войти</button>
+                </form>
                 <button type="submit" style="border-radius: 25px; background: black;color: white;width: 25vw;height: 50px;cursor: pointer;font-size: 18px;font-weight: bold;border: 1px solid grey;">Забыли пароль?</button>
                 <p>Нет учётной записи? <span style="color: dodgerblue;">Зарегистрируйтесь</span></p>
             </div>

@@ -28,11 +28,33 @@
             <div class="main-left-bar-2">
                 <img src="images/avatar.jpg" alt="avatar" width="50px" style="border-radius: 50px;">
                 <div class="main-left-bar-2-text">
-                    <h4 style="color: white">Kan</h4>
+                    <h3 style="color: white">Kan</h4>
                     <h4 style="color: grey">@Kanres</h4>
                 </div>
             </div>
         </div>
+        <script>
+            // Fetch user data from the PHP script using the fetch API
+            fetch('get_user_info.php')
+                .then(response => response.json())
+                .then(user => {
+                    if (user) {
+                        console.log
+                        // Get the elements where user data will be displayed
+                        const userNameElement = document.querySelector('.user-info h2');
+                        const userUsernameElement = document.querySelector('.user-info h4');
+                        const topUsernameElement = document.querySelector('.profile-info h1');
+                        
+                        const leftTopUsernameElement = document.querySelector('.main-left-bar-2-text h3');
+                        const leftBotnameElement = document.querySelector('.main-left-bar-2-text h4');
+                        // Update HTML content with user informatio
+                        leftTopUsernameElement.textContent = `${user.username}`;
+                        leftBotnameElement.textContent = `@${user.username}`;
+                        userNameElement.style.color = 'white';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        </script>
 
 
         <div class="main-middle-content">

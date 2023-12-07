@@ -28,7 +28,7 @@
             <div class="main-left-bar-2">
                 <img src="images/avatar.jpg" alt="avatar" width="50px" style="border-radius: 50px;">
                 <div class="main-left-bar-2-text">
-                    <h4 style="color: white">Kan</h4>
+                    <h3 style="color: white">Kan</h4>
                     <h4 style="color: grey">@Kanres</h4>
                 </div>
             </div>
@@ -43,40 +43,144 @@
                     <a href="#"><p style="color: grey">Following</p></a>
                 </div>
             </div>
-            <div class="main-middle-whats-happening">
-                <div class="main-profile-pic">
-                    <img src="images/avatar.jpg" alt="avatar" width="40px" style="border-radius: 50px;">
-                </div>
-                <div class="main-input">
-                    <select name="where-to-post" id="everyone-private" style="border: 1px solid rgba(30, 143, 255, 0.541);background: black;color: dodgerblue;  border-radius: 50px; height: 25px;font-size: 16px;width: 100px;">
-                        <option value="Everyone" style="padding: 0 10vw;">Everyone</option>
-                        <option value="Private">Private</option>
-                    </select>
-                    <input type="text" name="post" id="new-post" placeholder="What is happening?!" style="font-size: 22px;border: none;background: black;height: 10vh;color: white;">
-                    <h4 style="color: dodgerblue; font-weight: bold;"><img src="images/globe.png" alt="globe" width="16px"> Everyone can reply</h4>
-                    <div class="main-input-bottom">
-                        <div class="main-input-icons">
-                            <div class="main-input-icon"><img src="images/gallery.png" alt="gallery"></div>
-                            <div class="main-input-icon"><img src="images/gif.png" alt="gif"></div>
-                            <div class="main-input-icon"><img src="images/poll.png" alt="poll"></div>
-                            <div class="main-input-icon"><img src="images/emoji.png" alt="emoji"></div>
-                            <div class="main-input-icon"><img src="images/calendar.png" alt="calendar"></div>
-                            <div class="main-input-icon"><img src="images/geo.png" alt="geo"></div>
-                        </div>
-                        <button style="background: dodgerblue;height: 30px;width: 5vw;border: none;font-size: 18px;color: white;font-weight: bold;border-radius: 30px;">Post</button>
+            <form action="upload_post.php" method="post" enctype="multipart/form-data">
+                <div class="main-middle-whats-happening">
+                    <div class="main-profile-pic">
+                        <img src="images/avatar.jpg" alt="avatar" width="40px" style="border-radius: 50px;">
                     </div>
-                    
+                    <div class="main-input">
+                        <select name="where-to-post" id="everyone-private" style="border: 1px solid rgba(30, 143, 255, 0.541);background: black;color: dodgerblue;  border-radius: 50px; height: 25px;font-size: 16px;width: 100px;">
+                            <option value="Everyone" style="padding: 0 10vw;">Everyone</option>
+                            <option value="Private">Private</option>
+                        </select>
+                        <input type="text" name="post" id="new-post" placeholder="What is happening?!" style="font-size: 22px;border: none;background: black;height: 10vh;color: white;">
+                        <h4 style="color: dodgerblue; font-weight: bold;"><img src="images/globe.png" alt="globe" width="16px"> Everyone can reply</h4>
+                        
+                        <div class="main-input-bottom">
+                            <div class="main-input-icons">
+                                <div class="main-input-icon"><img src="images/gallery.png" alt="gallery"></div>
+                                <div class="main-input-icon"><img src="images/gif.png" alt="gif"></div>
+                                <div class="main-input-icon"><img src="images/poll.png" alt="poll"></div>
+                                <div class="main-input-icon"><img src="images/emoji.png" alt="emoji"></div>
+                                <div class="main-input-icon"><img src="images/calendar.png" alt="calendar"></div>
+                                <div class="main-input-icon"><img src="images/geo.png" alt="geo"></div>
+                            </div>
+                            <button type="submit" style="background: dodgerblue;height: 30px;width: 5vw;border: none;font-size: 18px;color: white;font-weight: bold;border-radius: 30px;">Post</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
+            
             <div class="main-news-feed">
                 <!-- Тут будут появляться посты -->
             </div>
+            <script>
+                // Fetch posts data from the PHP script
+                fetch('posts.php')
+                    .then(response => response.json())
+                    .then(posts => {
+                        const mainNewsFeed = document.querySelector('.main-news-feed');
+        
+                        // Loop through the posts and create HTML elements for each post
+                        posts.forEach(post => {
+                            const postElement = document.createElement('div');
+                            postElement.classList.add('post');
+                            console.log(post)
+                            // Customize how you want to display each post (e.g., title, content, user, etc.)
+                            postElement.innerHTML = `
+                            <div class="post" style="padding:20px;">
+                                <div class="post-left">
+                                    <img src="images/avatar.jpg" alt="pfp" style="width: 40px;height: 40px;border-radius: 30px;">
+                                </div>
+                                <!-- Это правая часть -->
+                                <div class="post-right">
+                                    <!-- Это часть с контентом -->
+                                    <div class="post-content">
+                                        <!-- Тут имя пользователя и его ник -->
+                                        <div class="post-username">
+                                            <p style="color: gray;font-weight: 100;"><b style="color: white;">${post.username}</b> @${post.username}</p>
+                                        </div>
+                                        <!-- Это сам контент (тут пока только текст) -->
+                                        <div class="post-content-text">
+                                            <p style="color: rgb(217, 217, 217);font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 14px;">${post.title}</p>
+                                        </div>
+                                    </div>
+                                    <!-- Это часть с иконками -->
+                                    <div class="post-bottom">
+                                        <!-- Тут тоже делится на 2 части -->
+                                        <div class="post-bottom-left">
+                                            <!-- Каждая иконка это отдельный класс с картинкой и числом. -->
+                                            <div class="post-bottom-left-item">
+                                                <img src="images/comment.png" width="20px" alt="comment" style="opacity: 50%;filter: invert(1);cursor: pointer;">
+                                                <p style="color: grey;font-size: 12px;">${post.retweets_number}</p>
+                                            </div>
+                                            <div class="post-bottom-left-item">
+                                                <img src="images/retweet.png" width="20px" alt="retweet" style="opacity: 50%;filter: invert(1);cursor: pointer;">
+                                                <p style="color: grey;font-size: 12px;">12</p>
+                                            </div>
+                                            <div class="post-bottom-left-item">
+                                                <img src="images/like.png" width="20px" alt="like" style="opacity: 50%;filter: invert(1);cursor: pointer;">
+                                                <p style="color: grey;font-size: 12px;">${post.likes_number}</p>
+                                            </div>
+                                            <div class="post-bottom-left-item">
+                                                <img src="images/view.png" width="20px" alt="view" style="opacity: 50%;filter: invert(1);cursor: pointer;">
+                                                <p style="color: grey;font-size: 12px;">${post.likes_number + post.retweets_number}</p>
+                                            </div>
+                                        </div>
+                                        <!-- В этой части тоже иконки. Тут кнопки сохранения и "поделиться" -->
+                                        <div class="post-bottom-right">
+                                            <div class="post-bottom-right-item">
+                                                <img src="images/bookmark.png" width="20px" alt="bookmark" style="opacity: 50%;filter: invert(1);cursor: pointer;">
+                                            </div>
+                                            <div class="post-bottom-right-item">
+                                                <img src="images/share.png" width="20px" alt="share" style="opacity: 50%;filter: invert(1);cursor: pointer;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                            
+        
+                            // Append the post element to the main news feed
+                            mainNewsFeed.appendChild(postElement);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching posts:', error));
+            </script>
         </div>
-        <div class="main-right-bar">
+        <div class="main-right-bar" style="justify-content:initial;">
             <div class="main-right-bar-search">
-                <img src="images/find.png" alt="search" width="24px" height="24px">
-                <input type="text" placeholder="Search" style="border: none; background: rgb(47, 47, 47);height: 40px;font-size: 16px;border-radius: 50px;width: 100%;color: white;">
-            </div>
+                <a href="results_page.html" id="searchLink">
+                    <img src="images/find.png" alt="search" width="24px" height="24px">
+                </a>
+                <input type="text" id="searchInput" placeholder="Search" style="border: none; background: rgb(47, 47, 47); height: 40px; font-size: 16px; border-radius: 50px; width: 100%; color: white;">
+                <script>
+                    // Получаем ссылку и поле ввода по их id
+                    const searchLink = document.getElementById('searchLink');
+                    const searchInput = document.getElementById('searchInput');
+                
+                    // При клике на картинку
+                    searchLink.addEventListener('click', function () {
+                        // Получаем значение из поля ввода
+                        const searchText = searchInput.value;
+                
+                        // Сохраняем значение в localStorage
+                        localStorage.setItem('searchQuery', searchText);
+                    });
+                
+                    // При загрузке страницы
+                    window.addEventListener('load', function () {
+                        // Получаем значение из localStorage
+                        const savedSearchQuery = localStorage.getItem('searchQuery');
+                
+                        // Если значение найдено, устанавливаем его в поле ввода
+                        if (savedSearchQuery) {
+                            searchInput.value = savedSearchQuery;
+                        }
+                    });
+                </script>
+            </div>            
             <div class="main-right-bar-premium">
                 <h2 style="color: white;">Subscribe to Premium</h2>
                 <h4 style="color: white;">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</h4>
@@ -120,6 +224,28 @@
                     </div>
                 </div>
             </div>
+            <script>
+                // Fetch user data from the PHP script using the fetch API
+                fetch('get_user_info.php')
+                    .then(response => response.json())
+                    .then(user => {
+                        if (user) {
+                            console.log
+                            // Get the elements where user data will be displayed
+                            const userNameElement = document.querySelector('.user-info h2');
+                            const userUsernameElement = document.querySelector('.user-info h4');
+                            const topUsernameElement = document.querySelector('.profile-info h1');
+                            
+                            const leftTopUsernameElement = document.querySelector('.main-left-bar-2-text h3');
+                            const leftBotnameElement = document.querySelector('.main-left-bar-2-text h4');
+                            // Update HTML content with user informatio
+                            leftTopUsernameElement.textContent = `${user.username}`;
+                            leftBotnameElement.textContent = `@${user.username}`;
+                            userNameElement.style.color = 'white';
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            </script>
         </div>
     </section>
 </body>
